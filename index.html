@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrench Clearance Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Wrench Clearance Calculator</h2>
+        <div class="form-group">
+            <label for="boltSize">Bolt Size: <span class="tooltip">?<span class="tooltiptext">Enter the bolt size in the format: diameter-thread. Example: 1/4-20 or M8x1.25.</span></span></label>
+            <input type="text" id="boltSize" placeholder="Enter bolt size (e.g., 1/4-20)">
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="form-group">
+            <label for="clearanceType">Clearance Type: <span class="tooltip">?<span class="tooltiptext">Choose the type of fit: Close Fit, Normal Fit, or Loose Fit. Close Fit is the tightest and Loose Fit is the loosest.</span></span></label>
+            <select id="clearanceType">
+                <option value="close">Close Fit</option>
+                <option value="normal">Normal Fit</option>
+                <option value="loose">Loose Fit</option>
+            </select>
+        </div>
+        <div class="button-group">
+            <button id="calculateBtn" onclick="calculateClearance()">Calculate Clearance <span class="tooltip">?<span class="tooltiptext">Click to calculate the clearance based on the entered bolt size and selected fit type.</span></span></button>
+            <button id="clearBtn" onclick="clearForm()">Clear <span class="tooltip">?<span class="tooltiptext">Click to clear all input fields and results.</span></span></button>
+        </div>
+        <div id="results" class="results" style="display: none;">
+            <h3>Results:</h3>
+            <p id="clearanceResult"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
